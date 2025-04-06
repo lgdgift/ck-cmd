@@ -607,6 +607,8 @@ class FBXBuilderVisitor : public RecursiveFieldVisitor<FBXBuilderVisitor> {
 			gMaterial->Specular = { nif_specular_color.r, nif_specular_color.g, nif_specular_color.b };
 			gMaterial->SpecularFactor.Set(material_property->GetSpecularStrength() / 999); // Specular strength is stored in the 0-999 range
 
+			gMaterial->ReflectionFactor = 0.0;
+
 			//Diffuse
 			gMaterial->Diffuse = lDiffuse;
 
@@ -3573,7 +3575,7 @@ NiTriShapeRef FBXWrangler::importShape(FbxNodeAttribute* node, const std::string
 					//correct set this flag or my ocd will throw fits.
 					factor.Get() > 0.0 ? shader->SetShaderFlags1_sk(SkyrimShaderPropertyFlags1(shader->GetShaderFlags1_sk() | SLSF1_SPECULAR)) : shader->SetShaderFlags1_sk(SkyrimShaderPropertyFlags1(shader->GetShaderFlags1_sk() & ~SLSF1_SPECULAR));
 					FbxDouble3 colourvec = colour.Get();
-					shader->SetSpecularStrength(factor.Get());
+					shader->SetSpecularStrength(factor.Get() * 999);
 					shader->SetSpecularColor(Color3(colourvec[0], colourvec[1], colourvec[2]));
 				}
 
