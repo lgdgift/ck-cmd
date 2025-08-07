@@ -119,7 +119,7 @@ The required libraries are:
 - xedit : [GitHub](https://github.com/matortheeternal/xedit-lib "GitHub")
 - zlib : [GitHub](https://github.com/TES5Edit/TES5Edit/tree/dev/zlib "GitHub")
 
-The expected file structure is [here](https://privatebin.net/?103e41356959809a#WAHHYkhZyGOV7c5tCmpaEHTzm1b458Z9KHWzjpVv5Vo= "here").update
+The expected file structure is [here](https://privatebin.net/?103e41356959809a#WAHHYkhZyGOV7c5tCmpaEHTzm1b458Z9KHWzjpVv5Vo= "here"). update
 
 ##### Running CMake:
 ```console
